@@ -1,0 +1,39 @@
+{
+  "name": "cypress-thenify",
+  "version": "0.1.1",
+  "description": "Get rid of Cypress `then` callback hell",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mbolotov/cypress-thenify.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "jest test/"
+  },
+  "keywords": [
+    "cypress",
+    "babel-plugin"
+  ],
+  "author": "Mikhail Bolotov",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/mbolotov/cypress-thenify/issues"
+  },
+  "homepage": "https://github.com/mbolotov/cypress-thenify#readme",
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/user?u=68281697"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-types": "^6.26.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.16.8",
+    "@types/babel-traverse": "^6.25.7",
+    "@types/node": "^17.0.8",
+    "babel-plugin-tester": "^6.0.0",
+    "jest": "^24.1.0"
+  }
+}
