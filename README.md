@@ -83,7 +83,7 @@ cy.get("foo").then(__cypressSyncVar__ => {
 3. The plugin searches for the `thenify` call only by its name, no deep semantic analysis is performed. So it will transpile any of `myObj.thenify()` calls.
 Use the plugin options to define your own unique function name if this default name clashes with any of your existing function (see `Plugin options` section)     
  
-## Install and configure
+## Install and configure (Legacy Cypress < 10 version )
 ```shell 
 npm i cypress-thenify -D
 ```
