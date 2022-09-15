@@ -9,6 +9,7 @@ This plugin allows wrapping a cypress command call statement into a `then` callb
 
                         
 ## Usage example
+### Strict mode (the default mode): 
 Given code
 ```js
     let a = cy.get("foo").thenify()
@@ -29,8 +30,35 @@ will be transpiled into this one:
     });
   });
 ```
+### Total mode:
+In this mode, the plugin will thenify all the `cy` statements. To enable this mode, use `total_thenify = 'true'` option, see [Plugin options](#plugin-options) section for details.
+Given code
+```js
+    let a = cy.get("foo")
+    cy.log(a.text())
+    let b = cy.get("bar")
+    cy.log(a.text())
+    b.click() // using jQuery click method
+```
+will be transpiled into this one:
+```js
+cy.get("foo").then(__cypressSyncVar__ => {
+   let a = __cypressSyncVar__;
+   cy.log(a.text());
+   cy.then(() => {
+      cy.get("bar").then(__cypressSyncVar__ => {
+         let b = __cypressSyncVar__;
+         cy.log(a.text());
+         cy.then(() => {
+            b.click(); // using jQuery click method
+         });
+      });
+   });
+});
+```
 
-## Limitations
+
+## Limitations (Strict mode)
 1. The plugin wraps statements inside the current block of statements only. Use an empty call to `cy.thenify()` to 'synchronize' the execution context with the cypress event loop:
 ```js
    let myValue 
@@ -66,7 +94,7 @@ const thenify = require("cypress-thenify")
 
 module.exports = (on) => {
   const options = browserify.defaultOptions
-  options.browserifyOptions.transform[1][1].plugins.push(thenify)
+  options.browserifyOptions.transform[1][1].plugins.push([thenify, { total_thenify: 'true' }]) // Total mode is enabled 
   on('file:preprocessor', browserify(options))
 }
 ```
