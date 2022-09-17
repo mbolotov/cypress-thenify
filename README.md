@@ -123,5 +123,5 @@ You can define a custom `thenify` function name by passing options to the plugin
 This project is in alpha stage. Some bugs are highly likely to be found. Please report any issues or suggestions into the [tracker](https://github.com/mbolotov/cypress-thenify/issues)
 
 ## Ad
-If you use IDEA, Webstorm or other IntelliJ products to develop your Cypress tests, please consider using [Cypress Support](https://plugins.jetbrains.com/plugin/13819-cypress-support) or [Cypress Support Pro](https://plugins.jetbrains.com/plugin/13987-cypress-support-pro) plugins to increase you productivity.
+If you use IDEA, Webstorm or any other IntelliJ IDEs to develop your Cypress tests, please consider using [Cypress Support](https://plugins.jetbrains.com/plugin/13819-cypress-support) or [Cypress Support Pro](https://plugins.jetbrains.com/plugin/13987-cypress-support-pro) plugins to increase your productivity.
 
