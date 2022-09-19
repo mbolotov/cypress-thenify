@@ -89,6 +89,12 @@ Use the plugin options to define your own unique function name if this default n
 ```shell 
 npm i cypress-thenify -D
 ```
+
+If you do not have webpack and babel installed, add them like so per [the webpack documentation](https://webpack.js.org/loaders/babel-loader/):
+```shell
+npm i babel-loader @babel/core @babel/preset-env webpack -D
+```
+
 After that, we need to add this plugin as a babel plugin for Cypress. 
 
 Put this into your `plugin/index.js` if you have Cypress < 10 version:
